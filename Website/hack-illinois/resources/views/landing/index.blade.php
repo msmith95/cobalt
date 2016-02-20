@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('landing')
+@section('pageStylesheet')
 <link rel="stylesheet" href="css/landing.css">
 @endsection
 
