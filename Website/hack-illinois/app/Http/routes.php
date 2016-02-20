@@ -21,11 +21,8 @@
 | kernel and includes session state, CSRF protection, and more.
 |
 */
-<<<<<<< Updated upstream
-Route::group(['middleware' => ['cors', 'api']], function() {
-=======
+
 Route::group(['middleware' => 'cors'], function() {
->>>>>>> Stashed changes
 	Route::post('/api/auth', 'ApiController@auth');
 	Route::post('/api/register', 'ApiController@register');
 	Route::post('api/testApi', 'ApiController@testApi');

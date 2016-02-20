@@ -20,6 +20,7 @@ class CreateChoresTables extends Migration
             $table->string('frequency');
             $table->string('finished_today');
             $table->integer('assigned_user_id')->unsigned();
+            $table->timestamp('due_date');
             $table->timestamps();
 
             $table->foreign('assigned_user_id')
