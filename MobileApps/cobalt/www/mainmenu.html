@@ -2,8 +2,9 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="css/slidebars.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/mainmenu.css" />
+        
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/mainmenu.css" />
 
         <title>Cobalt</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -22,15 +23,17 @@
         <script src="http://hammerjs.github.io/dist/hammer.min.js"></script>
 
         <script type="text/javascript">
-            var body = document.getElementById('body');
-            var hammertime = new Hammer(body);
-            console.log(hammertime);
-            hammertime.on('swipe', function(ev) {
-                toggle_sidebar();
+            $(document).ready(function(){
+                var body = document.getElementById('body');
+                var hammertime = new Hammer(body);
+                console.log(hammertime);
+                hammertime.on('swipe', function(ev) {
+                    toggle_sidebar();
+                });
             });
         </script>
 
-        <div id="sidebar" class="sidebar">
+        <div id="sidebar" class="sidebar" style="left:-200px;">
                 <ul class="menulist">
                     <li class="menuhead">Menu</li>
                     <li class="menu">
@@ -57,9 +60,9 @@
             function toggle_sidebar()
             {
                 var sidebar = document.getElementById("sidebar");
-                
+
                 console.log(sidebar.style.left);
-                
+
                 if(sidebar.style.left == "-200px")
                 {
                     sidebar.style.left = "0px";
@@ -70,8 +73,5 @@
                 }
             }
         </script>
-
-
-        
     </body>
 </html>
