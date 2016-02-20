@@ -21,7 +21,20 @@
         }
         function showLogin(){
             $('#signupbox').hide();
-            $('.login-page').show();    
+            $('.login-page').show();
+        }
+        function login(){
+            var username = $('#loginEmail').val();
+            var password = $('#loginPassword').val();
+            $.post( "http://hackillinois.newelementgaming.net/api/auth", {email: username, password: password}, function(data) {
+                if(!data.hasOwnProperty('message')){
+                    //console.log(data[0].apikey);
+                    window.localStorage.setItem('apikey', data[0].apikey);
+                    window.localStorage.setItem('email', data[0].email);
+                }else{
+                    console.log("It didn't work");
+                }
+            });
         }
         </script>
 
@@ -38,12 +51,10 @@
               <button>create</button>
               <p class="message">Already registered? <a href="#">Sign In</a></p>
             </form>
-            <form class="login-form">
-              <input type="text" placeholder="username"/>
-              <input type="password" placeholder="password"/>
-              <button>login</button>
+              <input type="text" placeholder="email" name="email" id="loginEmail"/>
+              <input type="password" placeholder="password" name="password" id="loginPassword"/>
+              <button onclick="login()">login</button>
               <p class="message">Not registered? <a onclick="showRegistration()">Create an account</a></p>
-            </form>
           </div>
         </div>
 

@@ -21,7 +21,7 @@
 | kernel and includes session state, CSRF protection, and more.
 |
 */
-Route::group([], function() {
+Route::group(['middleware' => ['cors', 'api']], function() {
 	Route::post('/api/auth', 'ApiController@auth');
 	Route::post('/api/register', 'ApiController@register');
 	Route::post('api/testApi', 'ApiController@testApi');

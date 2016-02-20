@@ -13,15 +13,13 @@ use Illuminate\Support\Facades\Validator;
 class ApiController extends Controller
 {
     public function auth(Request $request){
-    	$user = new User();
-    	$user->email = $request->input('email');
-    	$user->password = $request->input('password');
-    	Auth::login($user);
-    	if(Auth::user()){
+    	if(Auth::once($request->all())){
     		$user = User::where('email','=',$request->input('email'))->get();
     		return $user;
     	}else{
-    		return "You were not logged in";
+    		$errors = array();
+    		$errors['message'] = "Invalid credentials";
+    		return $errors;
     	}
     }
 
