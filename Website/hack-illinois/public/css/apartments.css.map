@@ -1,0 +1,1 @@
+{"version":3,"sources":["apartments.scss"],"names":[],"mappings":"AAAA;EACC,UAAS,EACT;;AAED;EACC,0BAAyB,EACzB","file":"apartments.css","sourcesContent":[".lead{\n\tmargin:0;\n}\n\n.apartmentsContainer{\n\tbackground-color:#81B8D7;\n}"],"sourceRoot":"/source/"}
