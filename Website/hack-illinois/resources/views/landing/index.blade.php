@@ -8,7 +8,7 @@
 
 
 <div class="headerImage text-center">
-    <img class="img-responsive center-block" src="assets/cobalt_logo_large.png" alt="Cobalt" width="600" height="600">
+    <img class="img-responsive" src="assets/cobalt_logo_large.png" alt="Cobalt" width="500" height="500">
 </div>
 <div class="headerImageFooter">
     <div class="row">

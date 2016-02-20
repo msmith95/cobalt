@@ -1,0 +1,29 @@
+body, html {
+  height: 100%; }
+
+.navbar {
+  margin: 0; }
+
+.mainContainer {
+  padding: 0;
+  background-color: #81B8D7;
+  height: 100%; }
+
+.well {
+  margin-top: 20px; }
+
+.interval {
+  border: thin solid #232F35;
+  width: 300px;
+  margin: 30px auto; }
+
+.checkbox {
+  padding-left: 25px; }
+
+label {
+  font-size: 20px; }
+
+input[type='checkbox'] {
+  margin-top: 7px; }
+
+/*# sourceMappingURL=addChore.css.map */

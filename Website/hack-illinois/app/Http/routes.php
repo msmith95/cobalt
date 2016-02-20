@@ -34,4 +34,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/pickApartment', 'ApartmentController@index');
     Route::post('/joinApartment', 'ApartmentController@addToExisting');
     Route::post('/createApartment', 'ApartmentController@create');
+<<<<<<< Updated upstream
+=======
+    Route::get('/completeChore/{id}', 'HomeController@completeChore');
+>>>>>>> Stashed changes
 });

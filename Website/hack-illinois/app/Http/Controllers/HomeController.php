@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+<<<<<<< Updated upstream
+=======
+use App\Chore;
+
+>>>>>>> Stashed changes
 
 class HomeController extends Controller
 {
@@ -37,5 +42,17 @@ class HomeController extends Controller
         }
         //dd($listOfChores);
         return view('home.index', compact('chores', 'listOfChores', 'listOfRoommates'));
+<<<<<<< Updated upstream
+=======
+    }
+
+    public function completeChore($id){
+        $chore = Chore::findOrFail($id);
+        $chore->finished_today = "Yes";
+        $chore->save();
+        Auth::user()->numberOfCompletedChores++;
+        Auth::user()->save();
+        return redirect('home');
+>>>>>>> Stashed changes
     }
 }

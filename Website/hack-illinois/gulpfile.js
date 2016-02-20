@@ -15,5 +15,6 @@ elixir(function(mix) {
     mix.sass('landing.scss');
     mix.sass('apartments.scss');
     mix.sass('home.scss');
+    mix.sass('addChore.scss');
 
 });

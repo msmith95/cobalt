@@ -23,10 +23,19 @@ $dark: #232F35;
 	height:600px;
 	//position:relative;
 	background-color:$light;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+.headerImage img{
+	//margin-top:50px;
+	//margin-bottom:50px;
+	border:16px solid $dark;
 }
 
 .headerImageFooter{
-    height:150px;
+    height:75px;
     background-color:$dark;
     width:100%
 }
