@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','apikey',
+        'name', 'email', 'password','apikey', 'apartment_id'
     ];
 
     /**
@@ -23,4 +23,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function apartment(){
+        return $this->belongsTo('App\Apartment');
+    }
+
+    public function chores(){
+        return $this->hasMany('App\Chore', 'assigned_user_id');
+    }
 }

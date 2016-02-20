@@ -16,6 +16,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('paid');
+            $table->integer('apartment_id')->unsigned();
             $table->string('email')->unique();
             $table->string('password', 60);
             $table->integer('numberOfCompletedChores');
@@ -23,6 +24,11 @@ class CreateUsersTable extends Migration
             $table->string('apikey');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('apartment_id')
+                  ->references('id')
+                  ->on('apartments')
+                  ->onDelete('cascade');
         });
     }
 

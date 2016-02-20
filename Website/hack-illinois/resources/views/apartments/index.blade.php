@@ -16,11 +16,14 @@
                 <div class="well well-lg">
                     <h3>Select Existing Apartment</h3>
                     <br>
-                    <input type="text" class="form-control" placeholder="Apartment Name">
-                    <div class="lead">or</div>
-                    <input type="text" class="form-control" placeholder="Apartment ID">
-                    <br>
-                    <button type="button" class="form-control" class="btn btn-default">Submit</button>
+                    <form action="/joinApartment" method="POST">
+                        {!! csrf_field() !!}
+                        <input type="text" class="form-control" placeholder="Apartment Name" name="apt-name">
+                        <div class="lead">or</div>
+                        <input type="text" class="form-control" placeholder="Apartment ID" name="apt-id">
+                        <br>
+                        <button type="submit" class="form-control" class="btn btn-default">Submit</button>
+                    </form>
                 </div>
 
             </div>
@@ -28,17 +31,20 @@
                 <div class="well well-lg">
                     <h3>Create New Apartment</h3>
                     <br>
-                    <input type="text" class="form-control" placeholder="Apartment Name">
-                    <br>
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Add Roomates (email)">
-                      <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">Add</button>
-                      </span>
-                    </div>
-                    <div class="roomatesToAdd"></div>
-                    <br>
-                    <button type="button" class="form-control" class="btn btn-default">Submit</button>
+                    <form action="/createApartment" method="POST">
+                        {!! csrf_field() !!}
+                        <input type="text" class="form-control" placeholder="Apartment Name" name="name">
+                        <br>
+                        <div class="input-group">
+                          <input type="text" class="form-control" placeholder="Add Roomates (email)" name='roommates[]'>
+                          <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">Add</button>
+                          </span>
+                        </div>
+                        <div class="roomatesToAdd"></div>
+                        <br>
+                        <button type="submit" class="form-control" class="btn btn-default">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>

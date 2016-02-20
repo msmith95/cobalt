@@ -31,4 +31,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
     Route::get('/', 'PagesController@index');
     Route::get('/home', 'HomeController@index');
+    Route::get('/pickApartment', 'ApartmentController@index');
+    Route::post('/joinApartment', 'ApartmentController@addToExisting');
+    Route::post('/createApartment', 'ApartmentController@create');
 });
