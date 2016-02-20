@@ -180,6 +180,8 @@
     <div class="container innerContainer">
         <div class="row">
             <div class="col-md-4">
+                <button type="button" class="btn btn-primary form-control addChoreButton">Add New Chore</button>
+
                 <div class="well well-lg">
                     <div class="lead">Invite New Roomate</div>
                     <input type="text" class="form-control" placeholder="Email">
