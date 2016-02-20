@@ -1,0 +1,29 @@
+.btn{
+	//max-width:200px;
+}
+
+.list-group-item{
+	display:flex;
+	justify-content:space-between;
+}
+
+.listInfo{
+	display:none;
+	border-left:1px solid #ddd;
+	border-right:1px solid #ddd;
+}
+
+.listInfo p{
+	margin-bottom:0;
+	padding:10px 0px;
+}
+
+.listInfo:last-child{
+	margin-bottom:0;
+	border: 1px solid #ddd;
+	border-top: none;
+}
+
+.mainContainer{
+	padding:0;
+}
