@@ -69,10 +69,101 @@
 
         
 
-    </div> <!-- iner container -->
+    </div> <!-- inner container -->
 
     <hr>
 
+    <div class="container innerContainer">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="lead">Roomate 1</div>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                        60%
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-md-offset-1">
+                <p>Chore: Washing the baseboards <i class="fa fa-check"></i></p>
+                <p>Chore: Cleaning the Fridge</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="lead">Roomate 2</div>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                        60%
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-md-offset-1">
+                <p>Chore: Washing the baseboards <i class="fa fa-check"></i></p>
+                <p>Chore: Cleaning the Fridge</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="lead">Roomate 3</div>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                        60%
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-md-offset-1">
+                <p>Chore: Washing the baseboards <i class="fa fa-check"></i></p>
+                <p>Chore: Cleaning the Fridge</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="lead">Roomate 4</div>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                        60%
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-md-offset-1">
+                <p>Chore: Washing the baseboards <i class="fa fa-check"></i></p>
+                <p>Chore: Cleaning the Fridge</p>
+            </div>
+        </div>
+    </div><!-- Inner Container -->
+
+    <hr>
+
+    <div class="container innerContainer">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="well well-lg">
+                    <div class="lead">Invite New Roomate</div>
+                    <input type="text" class="form-control" placeholder="Email">
+                    <br>
+                    <button type="button" class="form-control" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+            <div class="col-md-6 col-md-offset-2">
+                <div class="lead">Apartment Info</div>
+                <p>Apartment Name: Gillette</p>
+                <p>Apartment ID: 321</p>
+                <div class="lead">User Info</div>
+                <p>Name: Johnny Appleseed</p>
+                <p>User ID: 7654</p>
+                <input type="text" class="form-control" placeholder="New Password">
+                <br>
+                <button type="button" class="form-control" class="btn btn-default">Submit</button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
 </div>
 @endsection
 
