@@ -25,6 +25,7 @@ Route::group([], function() {
 	Route::post('/api/auth', 'ApiController@auth');
 	Route::post('/api/register', 'ApiController@register');
 	Route::post('api/testApi', 'ApiController@testApi');
+	Route::post('api/register', 'ApiController@register');
 });
 
 Route::group(['middleware' => 'web'], function () {
@@ -34,8 +35,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/pickApartment', 'ApartmentController@index');
     Route::post('/joinApartment', 'ApartmentController@addToExisting');
     Route::post('/createApartment', 'ApartmentController@create');
-<<<<<<< Updated upstream
-=======
     Route::get('/completeChore/{id}', 'HomeController@completeChore');
->>>>>>> Stashed changes
+    Route::get('/addChore', 'HomeController@addChore');
 });

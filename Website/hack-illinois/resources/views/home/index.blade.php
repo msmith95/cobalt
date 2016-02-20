@@ -36,15 +36,11 @@
                         <div class="list-group-item">{{ $chores[$i]->name }}
                             <div class="listButtons">
                                 <button type="button" class="btn btn-default" onclick="toggler('listInfo{{ $i }}')">Info</button>
-<<<<<<< Updated upstream
-                                <button type="button" class="btn btn-default">Complete <i class="fa fa-check"></i></button>
-=======
                                 @if ($chores[$i]->finished_today == "Yes")
                                      <button type="button" class="btn btn-default disabled">Completed <i class="fa fa-check"></i></button>
                                 @else
                                      <a class="btn btn-success" href="/completeChore/{{ $chores[$i]->id }}">Complete <i class="fa fa-check"></i></a>
                                 @endif
->>>>>>> Stashed changes
                             </div>
                         </div>
                         <div class="listInfo0 listInfo text-center" id="listInfo{{ $i }}">
