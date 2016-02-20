@@ -37,9 +37,9 @@
             </div>
             <div class="col-md-4 text-center">
                 <!-- <div class="lead">Cheap</div> -->
-                <div class="lead smallLead">$17.38</div>
-                <div class="lead smallLead">per Roommate</div>
-                <div class="lead smallLead">per Year</div>
+                <div class="lead smallLead">Feature 1</div>
+                <div class="lead smallLead">Feature 2</div>
+                <div class="lead smallLead">Feature 3</div>
             </div>
 
         </div>
