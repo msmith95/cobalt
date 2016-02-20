@@ -27,19 +27,19 @@
                 <!-- <div class="lead">Useful</div> -->
                 <div class="lead smallLead">Track your chores</div>
                 <div class="lead smallLead">Keep roomates accountable</div>
-                <div class="lead smallLead">no more dirty dishes!</div>
+                <div class="lead smallLead">No more dirty dishes!</div>
             </div>
             <div class="col-md-4 text-center">
                 <!-- <div class="lead">Simple</div> -->
                 <div class="lead smallLead">Create custom Chores</div>
-                <div class="lead smallLead">Feature slot 2</div>
-                <div class="lead smallLead">Feature slot 3</div>
+                <div class="lead smallLead">Choose when you get notifications</div>
+                <div class="lead smallLead">Easy to use mobile app</div>
             </div>
             <div class="col-md-4 text-center">
                 <!-- <div class="lead">Cheap</div> -->
-                <div class="lead smallLead">Feature slot 1</div>
-                <div class="lead smallLead">Feature slot 2</div>
-                <div class="lead smallLead">Feature slot 3</div>
+                <div class="lead smallLead">$17.38</div>
+                <div class="lead smallLead">per Roommate</div>
+                <div class="lead smallLead">per Year</div>
             </div>
 
         </div>
