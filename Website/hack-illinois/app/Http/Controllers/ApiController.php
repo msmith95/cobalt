@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Chore;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\User;
@@ -88,10 +89,12 @@ class ApiController extends Controller
 
     public function completeChore(Request $request){
     	$user = User::where('apikey', '=', $request->input('apikey'))->first();
-    	$chore = Chore::findOrFail($request->input('chore-id'));
+    	$chore = Chore::findOrFail($request->input('choreId'));
     	$chore->finished_today = "Yes";
     	$chore->save();
     	$user->numberOfCompletedChores++;
     	$user->save();
+
+        return $chore;
     }
 }

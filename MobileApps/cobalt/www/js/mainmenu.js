@@ -1,12 +1,7 @@
 $( document ).ready(function() {
     console.log("mainmenu.js is loaded!");
-    getDate();
     loadChores();
 });
-
-function getDate(){
-	
-}
 
 function toggler(divID) {
     $("#info" + divID).toggle();
@@ -34,8 +29,12 @@ function loadChores(){
 			$(".chores").append("<div class='lead'>No chores today, please check back tomorrow</div>")
 		}else{
 			for (var i = 0; i < userChores.length; i++) {
-
-				$(".chores").append("<div class='lead'>" + userChores[i].name + "</div><p id='info" + i + "' style='display:none;'>" + userChores[i].description + "</p><button class='btn btn-success choreComplete'>Complete <i class='fa fa-check'></i></button><button class='btn btn-default' onclick='toggler(" + i + ")'>Info</button><hr>");
+				console.log(userChores[i].finished_today);
+				if(userChores[i].finished_today === "Yes"){
+					$(".chores").append("<div class='lead'>" + userChores[i].name + "</div><p id='info" + i + "' style='display:none;'>" + userChores[i].description + "</p><button class='btn btn-success choreComplete disabled' onclick='completeChore("+userChores[i].id+")' id='complete-"+userChores[i].id+"' >Complete <i class='fa fa-check'></i></button><button class='btn btn-default ' onclick='toggler(" + i + ")'>Info</button><hr>");
+				}else{
+					$(".chores").append("<div class='lead'>" + userChores[i].name + "</div><p id='info" + i + "' style='display:none;'>" + userChores[i].description + "</p><button class='btn btn-success choreComplete' onclick='completeChore("+userChores[i].id+")' id='complete-"+userChores[i].id+"' >Complete <i class='fa fa-check'></i></button><button class='btn btn-default' onclick='toggler(" + i + ")'>Info</button><hr>");
+				}
 			}
 		}
 
@@ -73,4 +72,12 @@ function loadChores(){
 
 	});
 
+}
+
+function completeChore (id){
+	var apikey = window.localStorage.getItem('apikey');
+	$.post("http://hackillinois.newelementgaming.net/api/completeChore", {apikey: apikey, choreId: id}, function(data) {
+		$('#complete-'+id).addClass('disabled');
+		console.log(data);
+	});
 }
