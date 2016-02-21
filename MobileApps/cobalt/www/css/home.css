@@ -11,7 +11,13 @@ body .mainContainer {
 .mainContainer hr {
   margin: 10px 0px; }
 
-.info .lead {
+.lead {
   font-size: 30px; }
+
+.choreComplete {
+  margin-right: 20px; }
+
+.roomates .progress {
+  height: 10px; }
 
 /*# sourceMappingURL=home.css.map */

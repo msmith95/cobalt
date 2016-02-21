@@ -20,7 +20,7 @@
                       <!-- Default panel contents -->
                       <div class="panel-heading"><h1>Saturday</h1></div>
                       <div class="panel-body">
-                        <h1>{{ \Carbon\Carbon::now()->day }}</h1>
+                        <h1>{{ \Carbon\Carbon::now('America/Chicago')->day }}</h1>
                       </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
             <div class="col-md-8">
                 <div class="list-group">
                     <div class="list-group-item active">
-                        Todays Chores
+                        Today's Chores
                     </div>
 
                     @if (count($chores) > 0)
@@ -47,6 +47,10 @@
                                 <p>{{ $chores[$i]->description }}</p>
                         </div>
                         @endfor
+                    @else
+                        <div class="list-group-item">
+                            <p>You have no chores today!  Please check back tomorrow.</p>
+                        </div>
                     @endif
                     <!--<div class="list-group-item">Take out Trash
                         <div class="listButtons">
@@ -180,6 +184,7 @@
     <div class="container innerContainer">
         <div class="row">
             <div class="col-md-4">
+            <button type="submit" class="form-control btn btn-primary addChoreButton">Add New Chore</button>
                 <div class="well well-lg">
                     <div class="lead">Invite New Roomate</div>
                     <input type="text" class="form-control" placeholder="Email">
