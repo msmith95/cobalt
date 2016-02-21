@@ -10,12 +10,14 @@
     <div class="container innerContainer">
         <!-- <h2 class="text-center">Features</h2> -->
         <div class="well well-lg">
-            <input type="text" class="form-control" placeholder="Chore Name">
+          <form action="/createChore" method="POST">
+            {{ csrf_field() }}
+            <input type="text" class="form-control" placeholder="Chore Name" name="name">
             <br>
-            <input type="text" class="form-control" placeholder="Chore Description">
+            <input type="text" class="form-control" placeholder="Chore Description" name="description">
             <div class="interval">
-                <input type="date" class="form-control" name="dueDate">
-                    <select>
+                <input type="date" class="form-control" name="due_date">
+                    <select name="frequency">
                       <option value="Daily">Daily</option>
                       <option value="Bi-Weekly">Bi-Weekly</option>s
                       <option value="Weekly">Weekly</option>
@@ -24,6 +26,7 @@
                     </select>
             </div>
             <button type="submit" class="form-control" class="btn btn-default">Submit</button>
+            </form>
         </div>
     </div>
 </div>

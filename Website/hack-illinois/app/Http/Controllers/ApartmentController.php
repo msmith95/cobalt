@@ -29,9 +29,7 @@ class ApartmentController extends Controller
     public function addToExisting(Request $request){
     	$user = Auth::user();
     	$apartment;
-    	if($request->input('apt-name') != ''){
-    		$apartment = Apartment::where('name', '=', $request->input('apt-name'))->get();
-    	}else if($request->input('apt-id') != ''){
+        if($request->input('apt-id') != ''){
     		$apartment = Apartment::findOrFail($request->input('apt-id'));
     	}else{
     		return redirect('pickApartment');

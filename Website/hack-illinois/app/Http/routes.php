@@ -27,6 +27,8 @@ Route::group(['middleware' => 'cors'], function() {
 	Route::post('/api/register', 'ApiController@register');
 	Route::post('api/testApi', 'ApiController@testApi');
 	Route::post('api/register', 'ApiController@register');
+	Route::post('api/everything', 'ApiController@retreiveEverything');
+	Route::post('api/completeChore', 'ApiController@completeChore');
 });
 
 Route::group(['middleware' => 'web'], function () {
@@ -38,4 +40,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('/createApartment', 'ApartmentController@create');
     Route::get('/completeChore/{id}', 'HomeController@completeChore');
     Route::get('/addChore', 'HomeController@addChore');
+    Route::post('/createChore', 'HomeController@createChore');
+    Route::get('/showDelete', 'HomeController@showDelete');
+    Route::get('/deleteChore/{id}', 'HomeController@deleteChore');
 });

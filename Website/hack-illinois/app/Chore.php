@@ -16,7 +16,7 @@ class Chore extends Model
     ];
 
     public function scopeDue($query){
-    	$query->where('due_date', '<=', Carbon::now());
+    	$query->where('due_date', '<=', Carbon::now('America/Chicago'));
     }
 
     public function setDueDate($date){

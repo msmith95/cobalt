@@ -65,4 +65,33 @@ class ApiController extends Controller
 
         return $user;
     }
+
+    public function retreiveEverything(Request $request){
+    	$user = User::where('apikey', '=', $request->input('apikey'))->first();
+    	$array = array();
+    	$array['user'] = $user;
+    	$chores = $user->chores()->due()->get();
+        $apartment = $user->apartment;
+        $listOfChores = array();
+        $listOfRoommates = array();
+        foreach ($apartment->user as $roommate) {
+            if($user->id != $roommate->id){
+                $listOfChores[''.$roommate->name] = $roommate->chores()->due()->get();
+                $listOfRoommates[''.$roommate->name] = $roommate;
+            }
+        }
+        $array['userChores'] = $chores;
+        $array['listOfChores'] = $listOfChores;
+
+        return $array;
+    }
+
+    public function completeChore(Request $request){
+    	$user = User::where('apikey', '=', $request->input('apikey'))->first();
+    	$chore = Chore::findOrFail($request->input('chore-id'));
+    	$chore->finished_today = "Yes";
+    	$chore->save();
+    	$user->numberOfCompletedChores++;
+    	$user->save();
+    }
 }

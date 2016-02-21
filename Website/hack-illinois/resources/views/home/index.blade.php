@@ -185,8 +185,9 @@
     <div class="container innerContainer">
         <div class="row">
             <div class="col-md-4">
-            <button type="submit" class="form-control btn btn-primary addChoreButton">Add New Chore</button>
-            <button type="submit" class="form-control btn btn-primary deleteChoreButton">Delete Chore</button>
+            <a href="/showDelete" class="form-control btn btn-primary deleteChoreButton">Delete Chore</a>
+            <a href="/addChore" class="form-control btn btn-primary addChoreButton">Add New Chore</a>
+
                 <div class="well well-lg">
                     <div class="lead">Invite New Roomate</div>
                     <input type="text" class="form-control" placeholder="Email">
