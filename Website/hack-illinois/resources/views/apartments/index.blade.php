@@ -18,8 +18,6 @@
                     <br>
                     <form action="/joinApartment" method="POST">
                         {!! csrf_field() !!}
-                        <input type="text" class="form-control" placeholder="Apartment Name" name="apt-name">
-                        <div class="lead">or</div>
                         <input type="text" class="form-control" placeholder="Apartment ID" name="apt-id">
                         <br>
                         <button type="submit" class="form-control" class="btn btn-default">Submit</button>

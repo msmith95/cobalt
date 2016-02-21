@@ -18,7 +18,7 @@
             <div class="col-md-4">
                 <div class="panel panel-default text-center">
                       <!-- Default panel contents -->
-                      <div class="panel-heading"><h1>Saturday</h1></div>
+                      <div class="panel-heading"><h1>Sunday</h1></div>
                       <div class="panel-body">
                         <h1>{{ \Carbon\Carbon::now('America/Chicago')->day }}</h1>
                       </div>
@@ -116,6 +116,7 @@
                        @endforeach
                     </div>
                 </div>
+                <hr>
                 @endforeach
             @endif
             <!--<div class="row">
