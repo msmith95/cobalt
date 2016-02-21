@@ -58,3 +58,9 @@ html, body {
 .menu:hover {
     background-color: #6791A9;
 }
+ul {
+    padding-top: 58px;
+    text-align: left;
+    font-family: Raleway;
+    font-size: 10px;
+}
