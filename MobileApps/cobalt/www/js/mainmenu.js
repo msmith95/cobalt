@@ -40,9 +40,15 @@ function loadChores(){
 		}
 
 		$(".chores hr").last().remove();
-
+		var progress = 0;
+		var i = 0;
 		for(key in listOfChores){
-			$(".roomates").append("<h4>" + key + "</h4><div class='progress'><div class='progress-bar' role='progressbar' aria-valuemin='0' aria-valuemax='100' style='width: 60%;'></div>");
+			console.log("completed: " + apartment.user[i].numberOfCompletedChores);
+			console.log("incompleted: " + apartment.user[i].numberOfIncompletedChores)
+			progress = apartment.user[i].numberOfCompletedChores / apartment.user[i].numberOfCompletedChores + apartment.user[i].numberOfIncompletedChores;
+			i++;
+			console.log("progress: " + progress);
+			$(".roomates").append("<h4>" + key + "</h4><div class='progress'><div class='progress-bar' role='progressbar' aria-valuemin='0' aria-valuemax='100' style='width: " + progress * 100 + "%;'></div>");
 			if (listOfChores[key].length != 0) {
 				for (var i = 0; i < listOfChores[key].length; i++) {
 					if (listOfChores[key][i].finished_today == "Yes") {
