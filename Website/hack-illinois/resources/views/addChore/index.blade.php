@@ -13,31 +13,15 @@
             <input type="text" class="form-control" placeholder="Chore Name">
             <br>
             <input type="text" class="form-control" placeholder="Chore Description">
-            <div class="interval center-block">
-                <div class="lead text-center">
-                    Please Select the Days for the Chore.
-                </div>
-                <div class="checkbox">
-                  <label><input type="checkbox" value="">Monday</label>
-                </div>
-                <div class="checkbox">
-                  <label><input type="checkbox" value="">Tuesday</label>
-                </div>
-                <div class="checkbox">
-                  <label><input type="checkbox" value="">Wednesday</label>
-                </div>
-                <div class="checkbox">
-                  <label><input type="checkbox" value="">Thursday</label>
-                </div>
-                <div class="checkbox">
-                  <label><input type="checkbox" value="">Friday</label>
-                </div>
-                <div class="checkbox">
-                  <label><input type="checkbox" value="">Saturday</label>
-                </div>
-                <div class="checkbox">
-                  <label><input type="checkbox" value="">Sunday</label>
-                </div>
+            <div class="interval">
+                <input type="date" class="form-control" name="dueDate">
+                    <select>
+                      <option value="Daily">Daily</option>
+                      <option value="Bi-Weekly">Bi-Weekly</option>s
+                      <option value="Weekly">Weekly</option>
+                      <option value="Bi-Monthly">Bi-Monthly</option>
+                      <option value="Monthly">Monthly</option>
+                    </select>
             </div>
             <button type="submit" class="form-control" class="btn btn-default">Submit</button>
         </div>

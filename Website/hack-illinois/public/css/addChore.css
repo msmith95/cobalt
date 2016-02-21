@@ -9,13 +9,29 @@ body, html {
   background-color: #81B8D7;
   height: 100%; }
 
+.innerContainer {
+  width: 500px; }
+
 .well {
   margin-top: 20px; }
 
 .interval {
   border: thin solid #232F35;
   width: 300px;
-  margin: 30px auto; }
+  margin: 30px auto;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  padding: 5px; }
 
 .checkbox {
   padding-left: 25px; }

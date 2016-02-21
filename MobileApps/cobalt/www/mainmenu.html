@@ -2,7 +2,12 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="css/slidebars.min.css" />
+<<<<<<< Updated upstream
         
+=======
+        <link rel="stylesheet" type="text/css" href="css/mainmenu.css" />
+        <link rel="stylesheet" type="text/css" href="css/home.css">
+>>>>>>> Stashed changes
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/mainmenu.css" />
 
@@ -49,9 +54,43 @@
 
                 </ul>
         </div>
-        <div id="home">
 
+        <div class="container mainContainer">
+            <div class="container innerContainer">
+                <div class="panel panel-default text-center">
+                      <!-- Default panel contents -->
+                      <div class="panel-heading"><h4>Saturday</h4></div>
+                      <div class="panel-body">
+                        <div class="lead" style="font-size:20px;">19</div>
+                      </div>
+                </div>
+            </div> <!-- innerWrapper -->
+            <hr>
 
+            <div class="container innerContainer">
+                <div class="chores">
+
+                </div>
+            </div>
+            <hr>
+
+            <div class="container innerContainer">
+                <div class="roomates">
+                    
+                </div>
+            </div>
+            <hr>
+            <div class="container innerContainer">
+                <div class="info">
+                    <div class="lead">Apartment Info</div>
+                    <p>Apartment Name: </p>
+                    <p>Apartment ID: </p>
+                    <div class="lead">User Info</div>
+                    <p>User Name: </p>
+                    <p>User ID: </p>
+
+                </div>
+            </div>
 
         </div>
 
@@ -60,15 +99,19 @@
             function toggle_sidebar()
             {
                 var sidebar = document.getElementById("sidebar");
+<<<<<<< Updated upstream
 
                 console.log(sidebar.style.left);
 
                 if(sidebar.style.left == "-200px")
                 {
+=======
+                console.log(sidebar.style.left);
+                if(sidebar.style.left == "-200px"){
+>>>>>>> Stashed changes
                     sidebar.style.left = "0px";
                 }
-                else
-                {
+                else{
                     sidebar.style.left = "-200px";
                 }
             }
