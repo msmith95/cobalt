@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-
+<?php $days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]; ?>
 <script>
     function toggler(divID) {
     $("#" + divID).toggle();
@@ -18,7 +18,7 @@
             <div class="col-md-4">
                 <div class="panel panel-default text-center">
                       <!-- Default panel contents -->
-                      <div class="panel-heading"><h1>Sunday</h1></div>
+                      <div class="panel-heading"><h1>{{ $days[\Carbon\Carbon::now("America/Chicago")->dayOfWeek] }}</h1></div>
                       <div class="panel-body">
                         <h1>{{ \Carbon\Carbon::now('America/Chicago')->day }}</h1>
                       </div>
@@ -94,26 +94,31 @@
     <hr>
 
     <div class="container innerContainer">
-            @if (count($listOfChores)>0 && count($listOfRoommates)>0)
-                @foreach ($listOfChores as $key => $value)
+            @if (count($apartmentChores)>0)
+                @foreach ($roommates as $person)
                 <div class="row">
                     <div class="col-md-5">
-                        <div class="lead">{{ $key }}</div>
+                        <div class="lead">{{ $person->name }}</div>
                             <div class="progress">
-                                 @if ($listOfRoommates[$key]->numberOfCompletedChores == 0)
+                                 @if ($person->numberOfCompletedChores == 0)
                                     <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:0%">0%
                                 @else
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ ($listOfRoommates[$key]->numberOfCompletedChores / ($listOfRoommates[$key]->numberOfCompletedChores + $listOfRoommates[$key]->numberOfIncompletedChores))*100 }}" aria-valuemin="0" aria-valuemax="100" style="width:{{ ($listOfRoommates[$key]->numberOfCompletedChores / ($listOfRoommates[$key]->numberOfCompletedChores + $listOfRoommates[$key]->numberOfIncompletedChores))*100 }}%">{{ ($listOfRoommates[$key]->numberOfCompletedChores / ($listOfRoommates[$key]->numberOfCompletedChores + $listOfRoommates[$key]->numberOfIncompletedChores))*100 }}%
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ $person->completedPercentage }}" aria-valuemin="0" aria-valuemax="100" style="width:{{  $person->completedPercentage }}%">{{ $person->completedPercentage }}%
                                 @endif
                                 </div>
                             </div>
                     </div>
                     <div class="col-md-6 col-md-offset-1">
-                       @foreach ($value as $element)
-                           <p>Chore: {{ $element->name }} @if ($element->finished_today == "Yes")
-                               <i class="fa fa-check"></i>
-                           @endif</p>
-                       @endforeach
+                       @php
+                        $aptPerson = $apartmentChores->get($person->name);
+                       @endphp
+                        @if($aptPerson !== null)
+                           @foreach ($aptPerson as $element)
+                               <p>Chore: {{ $element->name }} @if ($element->finished_today == "Yes")
+                                   <i class="fa fa-check"></i>
+                               @endif</p>
+                           @endforeach
+                        @endif
                     </div>
                 </div>
                 <hr>

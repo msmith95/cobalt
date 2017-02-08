@@ -13,7 +13,6 @@ class HomeController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @return void
      */
     public function __construct()
     {
@@ -27,22 +26,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $chores = Auth::user()->chores()->due()->get();
-        $apartment = Auth::user()->apartment;
-        $listOfChores = array();
-        $listOfRoommates = array();
-        foreach ($apartment->user as $user) {
-            if($user->id != Auth::user()->id){
-                $listOfChores[''.$user->name] = $user->chores()->due()->get();
-                $listOfRoommates[''.$user->name] = $user;
-            }
-        }
-        //dd($listOfChores);
-        return view('home.index', compact('chores', 'listOfChores', 'listOfRoommates'));
+        $user = Auth::user();
+        $chores = $user->chores()->due()->get();
+        $apartment = $user->apartment()->with('user')->first();
+        $apartmentChores = $apartment->chores()->with('user')->get()->groupBy('user.name');
+        $apartmentChores->forget($user->name);
+        $roommates = $apartment->user()->get()->keyBy('id')->forget($user->id);
+        return view('home.index', compact('chores', 'apartmentChores', 'roommates'));
     }
 
-    public function completeChore($id){
-        $chore = Chore::findOrFail($id);
+    public function completeChore(Chore $chore){
         $chore->finished_today = "Yes";
         $chore->save();
         Auth::user()->numberOfCompletedChores++;
@@ -63,13 +56,11 @@ class HomeController extends Controller
             $chore = new Chore($request->all());
             $chore->apartment_id = $apartment->id;
             $chore->assigned_user_id = $roommates[count($roommates)-1]->id;
-            //dd($chore);
             $chore->save();
         }else{
             $chore = new Chore($request->all());
             $chore->apartment_id = $apartment->id;
             $chore->assigned_user_id = $roommates[$choreCount % count($roommates)-1]->id;
-            //dd($chore);
             $chore->save();
         }
         return redirect('addChore');

@@ -2,10 +2,13 @@
 
 namespace App;
 
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+
+    use Notifiable;
     /**
      * The attributes that are mass assignable.
      *
@@ -30,5 +33,10 @@ class User extends Authenticatable
 
     public function chores(){
         return $this->hasMany('App\Chore', 'assigned_user_id');
+    }
+
+    public function getCompletedPercentageAttribute()
+    {
+        return ($this->numberOfCompletedChores / ($this->numberOfCompletedChores + $this->numberOfIncompletedChores))*100;
     }
 }

@@ -34,17 +34,21 @@ class ApartmentUpdate extends Command
             foreach ($users as $key => $user) {
                foreach ($user->chores()->due()->get() as $chore) {
                    if($chore->finished_today == "Yes"){
-                        if($key+1 >= count($users)){
-                            $chore->finished_today = "No";
-                            $chore->assigned_user_id = $users[0]->id;
-                            $this->computeDate($chore);
-                            $chore->save();
-                        }else{
-                            $chore->finished_today = "No";
-                            $chore->assigned_user_id = $users[$key+1]->id;
-                            $this->computeDate($chore);
-                            $chore->save();
-                        }
+                       $chore->finished_today = "No";
+                       $chore->assigned_user_id = $key+1 >= count($users) ? $users[0]->id : $users[$key+1]->id;
+                       $this->computeDate($chore);
+                       $chore->save();
+//                        if($key+1 >= count($users)){
+//                            $chore->finished_today = "No";
+//                            $chore->assigned_user_id = $users[0]->id;
+//                            $this->computeDate($chore);
+//                            $chore->save();
+//                        }else{
+//                            $chore->finished_today = "No";
+//                            $chore->assigned_user_id = $users[$key+1]->id;
+//                            $this->computeDate($chore);
+//                            $chore->save();
+//                        }
                    }
                }
             }
