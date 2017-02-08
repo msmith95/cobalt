@@ -1,2 +1,4 @@
-# hack-illinois-2016
-Repository for Hack Illinois 2016 project
+# Cobalt
+Cobalt is a chore organizing service that is directed towards apartments and roommates.  Users add custom chores with preset intervals: daily, every other day, bi-weekly, weekly and monthly.  Notifications are pushed to roommates through the mobile app, alerting them when they are assigned a chore.  Roomates have the ability to see whose turn it is to do a chore (users are recommended to make sure assigned chores get done on time for maximum effectiveness.  
+
+When a user completes a chore, they simply click the chore complete button either on the mobile app or online.  Chores are assigned every night (4am) and notifications are sent in the morning (8am).  Cobalt strives to make chores evenly spaced out in time and between roommate, implementation of this app ensures that no user feels they are doing more work than the rest!
